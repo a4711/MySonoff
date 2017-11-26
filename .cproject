@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+    	
+    <storageModule moduleId="org.eclipse.cdt.core.settings">
+        		
+        <cconfiguration id="io.sloeber.core.toolChain.release.1448849319">
+            			
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="io.sloeber.core.toolChain.release.1448849319" moduleId="org.eclipse.cdt.core.settings" name="Release">
+                				
+                <externalSettings/>
+                				
+                <extensions>
+                    					
+                    <extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    				
+                </extensions>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+                				
+                <configuration artifactName="${ProjName}" buildProperties="" description="" id="io.sloeber.core.toolChain.release.1448849319" name="Release" parent="org.eclipse.cdt.build.core.emptycfg">
+                    					
+                    <folderInfo id="io.sloeber.core.toolChain.release.1448849319.28651648" name="/" resourcePath="">
+                        						
+                        <toolChain id="io.sloeber.core.toolChain.release.948845439" name="Arduino Toolchain (Sloeber edition)" superClass="io.sloeber.core.toolChain.release">
+                            							
+                            <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="io.sloeber.targetplatform.128595617" name="Arduino Target" osList="all" superClass="io.sloeber.targetplatform"/>
+                            							
+                            <builder buildPath="${workspace_loc:/2017_10_29_sonoff_mqtt_control}/Release" id="io.sloeber.sketch.builder.1882208574" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Arduino sketch builder" superClass="io.sloeber.sketch.builder"/>
+                            							
+                            <tool id="io.sloeber.tool.sketch.compiler.cpp.791002668" name="Arduino C++ Compiler" superClass="io.sloeber.tool.sketch.compiler.cpp">
+                                								
+                                <option id="io.sloeber.compiler.cpp.sketch.option.incpath.799446141" name="Include Paths (-I)" superClass="io.sloeber.compiler.cpp.sketch.option.incpath" valueType="includePath">
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/core}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/variant}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoOTA}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WebServer}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WebServer/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WiFi}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WiFi/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/WiFiManager}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266mDNS}&quot;"/>
+                                    								
+                                </option>
+                                								
+                                <inputType id="io.sloeber.compiler.cpp.sketch.input.1081656784" name="CPP source files" superClass="io.sloeber.compiler.cpp.sketch.input"/>
+                                							
+                            </tool>
+                            							
+                            <tool id="io.sloeber.tool.compiler.c.1815849081" name="Arduino C Compiler" superClass="io.sloeber.tool.compiler.c">
+                                								
+                                <option id="io.sloeber.compiler.c.sketch.option.incpath.2102634936" name="Include Paths (-I)" superClass="io.sloeber.compiler.c.sketch.option.incpath" valueType="includePath">
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/core}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/variant}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoOTA}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WebServer}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WebServer/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WiFi}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WiFi/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/WiFiManager}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266mDNS}&quot;"/>
+                                    								
+                                </option>
+                                								
+                                <inputType id="io.sloeber.compiler.c.sketch.input.1573458965" name="C Source Files" superClass="io.sloeber.compiler.c.sketch.input"/>
+                                							
+                            </tool>
+                            							
+                            <tool id="io.sloeber.tool.sketch.compiler.s.1196407689" name="Arduino Assembler" superClass="io.sloeber.tool.sketch.compiler.s">
+                                								
+                                <option id="io.sloeber.compiler.asm.sketch.option.incpath.52190155" name="Include Paths (-I)" superClass="io.sloeber.compiler.asm.sketch.option.incpath" valueType="includePath">
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/core}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/variant}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoOTA}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WebServer}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WebServer/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WiFi}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WiFi/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/WiFiManager}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266mDNS}&quot;"/>
+                                    								
+                                </option>
+                                								
+                                <inputType id="io.sloeber.compiler.S.sketch.input.1537457872" name="Assembly source files" superClass="io.sloeber.compiler.S.sketch.input"/>
+                                							
+                            </tool>
+                            							
+                            <tool id="io.sloeber.tool.ar.1852164360" name="Arduino archiver" superClass="io.sloeber.tool.ar"/>
+                            							
+                            <tool id="io.sloeber.tool.combine.1221185648" name="Arduino combiner" superClass="io.sloeber.tool.combine"/>
+                            							
+                            <tool id="io.sloeber.tool.objcopy.eep.1650606051" name="Arduino tool Create eeprom" superClass="io.sloeber.tool.objcopy.eep"/>
+                            							
+                            <tool id="io.sloeber.tool.size.499389925" name="Arduino tool Print Size" superClass="io.sloeber.tool.size"/>
+                            						
+                        </toolChain>
+                        					
+                    </folderInfo>
+                    					
+                    <sourceEntries>
+                        						
+                        <entry excluding="libraries/ArduinoJson/fuzzing|libraries/?*/**/?xamples/**|libraries/?*/**/?xtras/**|libraries/?*/**/test*/**|libraries/?*/**/third-party/**|libraries**/._*|libraries/?*/c*/?*|libraries/?*/d*/?*|libraries/?*/D*/?*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        					
+                    </sourceEntries>
+                    				
+                </configuration>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+            		
+        </cconfiguration>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+        		
+        <project id="2017_10_29_sonoff_mqtt_control.null.1516146585" name="2017_10_29_sonoff_mqtt_control"/>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="scannerConfiguration">
+        		
+        <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+    	
+    <storageModule moduleId="refreshScope" versionNumber="2">
+        		
+        <configuration configurationName="Release">
+            			
+            <resource resourceType="PROJECT" workspacePath="/2017_10_29_sonoff_mqtt_control"/>
+            		
+        </configuration>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+    
+</cproject>
