@@ -10,13 +10,15 @@ class DeviceConfig
   static constexpr const char *CONFIG_FILE = "/config.json";
   
   public:
-  DeviceConfig():deviceName{0}, mqttServer{0} {}
+  DeviceConfig():deviceName{0}, mqttServer{0}, state{0} {}
 
   const char* getDeviceName() const{return deviceName;}
   const char* getMqttServer() const {return mqttServer;}
+  const char* getState() const {return state;}
 
-  void setDeviceName(const char* name) { strncpy(deviceName, name, sizeof(deviceName));    deviceName[sizeof(deviceName)-1] = 0; }
-  void setMqttServer(const char* server) { strncpy(mqttServer, server, sizeof(mqttServer)); mqttServer[sizeof(mqttServer)-1] = 0; }
+  void setDeviceName(const char* name) { secureCopy(deviceName, name, sizeof(deviceName)); }
+  void setMqttServer(const char* server) { secureCopy(mqttServer, server, sizeof(mqttServer)); }
+  void setState(const char* server) { secureCopy(state, server, sizeof(state)); }
   
   void setup()
   {
@@ -38,7 +40,7 @@ class DeviceConfig
        fsSaveConfig();
      }
 
-  	 WiFi.hostname(this->getDeviceName());
+     WiFi.hostname(this->getDeviceName());
      IPAddress localIp = WiFi.localIP();
      Serial.print("localIp: ");
      Serial.println(localIp.toString());
@@ -67,6 +69,21 @@ class DeviceConfig
       Serial.println(msg2);
     }
 
+    void secureCopy(char* buffer, const char* value, size_t bufferLength)
+    {
+	strncpy(buffer, value, bufferLength);
+	buffer[bufferLength-1] = 0;
+    }
+
+    bool readValue(JsonObject& json, const char* valueName, char* buffer, size_t bufferLength)
+    {
+      auto jsonValue = json[valueName];
+      if (!jsonValue.success()) return false;
+      secureCopy(buffer, jsonValue, bufferLength);
+      info(valueName, buffer);
+      return true;
+    }
+
     void fsReadConfig()
     {
       info("fsReadConfig()");
@@ -86,20 +103,11 @@ class DeviceConfig
             JsonObject& json = jsonBuffer.parseObject(buffer.get());
             if (json.success())
             {
-              auto jsonDeviceName = json["device_name"];
-              if (jsonDeviceName.success())
-              {
-                strncpy(deviceName, jsonDeviceName, sizeof(deviceName));
-                info("device_name", deviceName);
-              }
-  
-              auto jsonMqttServer = json["mqtt_server"];
-              if (jsonMqttServer.success())
-              {
-                strncpy(mqttServer, jsonMqttServer, sizeof(mqttServer));
-                info("mqtt_server", mqttServer);
-              }
-            } else error("failed to parse config file data");
+        	readValue(json, "device_name", deviceName, sizeof(deviceName));
+        	readValue(json, "mqtt_server", mqttServer, sizeof(mqttServer));
+        	readValue(json, "state", state, sizeof(state));
+            }
+            else error("failed to parse config file data");
           }
           else error("failed to open config file");
         }
@@ -119,6 +127,7 @@ class DeviceConfig
                       
       json["device_name"] = deviceName;
       json["mqtt_server"] = mqttServer;
+      json["state"] = state;
       File configFile = SPIFFS.open(CONFIG_FILE, "w");
       if (configFile)
       {
@@ -130,6 +139,7 @@ class DeviceConfig
 
      char deviceName[40];
      char mqttServer[40];
+     char state[40];
      static bool saveConfig;
 };
 
