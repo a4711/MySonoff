@@ -36,6 +36,13 @@ private:
     IPAddress ip = WiFi.localIP();
     String mac = WiFi.macAddress();
 
+    uint32_t flashSize = ESP.getFlashChipSize();
+    String  sFlashSize(flashSize);
+
+    uint32_t realFlashSize = ESP.getFlashChipRealSize();
+    String sRealFlashSize(realFlashSize);
+
+
     String html1 = "<!DOCTYPE html>\r\n<html>\r\n\
 <head><title>Configuration " + String(config->getDeviceName())+ "</title></head>\r\n\
 <body><form action=\"save\" method=\"GET\">\
@@ -46,7 +53,9 @@ private:
   <form action=\"reset\" method=\"GET\"><INPUT type=\"submit\" value=\"Reset\"><br></form>\
   <form>\
   MQTT IP Address <INPUT readonly type=\"text\" name=\"ip\" value=\"" + ip.toString() + "\"><br> \
-  MQTT MAC Address <INPUT readonly type=\"text\" name=\"mac\" value=\"" + mac + "\"><br> \"\
+  MQTT MAC Address <INPUT readonly type=\"text\" name=\"mac\" value=\"" + mac + "\"><br> \
+  MQTT Flash Size <INPUT readonly type=\"text\" name=\"flashSize\" value=\"" + sFlashSize + "\"><br> \
+  MQTT Real Flash Size <INPUT readonly type=\"text\" name=\"realFlashSize\" value=\"" + sRealFlashSize + "\"><br> \
   </form>\
 </body> \
 </html>";
