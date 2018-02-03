@@ -31,3 +31,9 @@
 *.out
 *.app
 /Release/
+
+# others
+.ino.cpp
+sloeber.ino.cpp
+.settings/language.settings.xml
+.settings/org.eclipse.cdt.core.prefs

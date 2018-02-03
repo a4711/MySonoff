@@ -3,16 +3,19 @@
 
 
 #include <ESP8266WebServer.h>
-#include "myiot_timer_system.h"
-#include "DeviceConfig.h"
 
+#include "myiot_DeviceConfig.h"
+#include "myiot_timer_system.h"
+
+namespace MyIOT
+{
 class WebServer : public MyIOT::ITimer 
 {
 public:
 
   WebServer():server(80), config(nullptr){}
 
-  void setup(DeviceConfig& rconfig)
+  void setup(MyIOT::DeviceConfig& rconfig)
   {
     config = &rconfig;
 
@@ -42,6 +45,8 @@ private:
     uint32_t realFlashSize = ESP.getFlashChipRealSize();
     String sRealFlashSize(realFlashSize);
 
+    int32_t rssi = WiFi.RSSI(); // receive signal strength
+    String sRSSI(rssi);
 
     String html1 = "<!DOCTYPE html>\r\n<html>\r\n\
 <head><title>Configuration " + String(config->getDeviceName())+ "</title></head>\r\n\
@@ -51,11 +56,13 @@ private:
   <INPUT type=\"submit\" value=\"Save\"><br>\
   </form>\
   <form action=\"reset\" method=\"GET\"><INPUT type=\"submit\" value=\"Reset\"><br></form>\
+  <hr>\
   <form>\
   MQTT IP Address <INPUT readonly type=\"text\" name=\"ip\" value=\"" + ip.toString() + "\"><br> \
   MQTT MAC Address <INPUT readonly type=\"text\" name=\"mac\" value=\"" + mac + "\"><br> \
   MQTT Flash Size <INPUT readonly type=\"text\" name=\"flashSize\" value=\"" + sFlashSize + "\"><br> \
   MQTT Real Flash Size <INPUT readonly type=\"text\" name=\"realFlashSize\" value=\"" + sRealFlashSize + "\"><br> \
+  Receive Signal Strength (RSSI) <INPUT readonly type=\"text\" name=\"rssi\" value=\"" + sRSSI + "\"><br> \
   </form>\
 </body> \
 </html>";
@@ -96,7 +103,7 @@ private:
   }
 
   ESP8266WebServer server; 
-  DeviceConfig* config;
-} webServer;
-
+  MyIOT::DeviceConfig* config;
+};
+}
 #endif

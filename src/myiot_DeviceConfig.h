@@ -4,7 +4,10 @@
 #include <FS.h>
 #include <WiFiManager.h>
 #include <ArduinoJson.h>
+#include <ESP8266WiFi.h>
 
+namespace MyIOT
+{
 class DeviceConfig
 {
   static constexpr const char *CONFIG_FILE = "/config.json";
@@ -23,6 +26,8 @@ class DeviceConfig
   void setup()
   {
      fsReadConfig();
+     WiFi.hostname(this->getDeviceName());
+
      WiFiManager wifiManager;
      WiFiManagerParameter custom_device_name("device", "Device Name", deviceName, sizeof(deviceName));
      WiFiManagerParameter custom_mqtt_server("server", "MQTT Server", mqttServer, sizeof(mqttServer));
@@ -144,5 +149,5 @@ class DeviceConfig
 };
 
 bool DeviceConfig::saveConfig = false;
-
+}
 #endif
