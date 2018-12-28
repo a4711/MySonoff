@@ -25,7 +25,7 @@
             			
             <storageModule moduleId="cdtBuildSystem" version="4.0.0">
                 				
-                <configuration artifactName="${ProjName}" buildProperties="" description="" id="io.sloeber.core.toolChain.release.1448849319" name="Release" parent="org.eclipse.cdt.build.core.emptycfg">
+                <configuration artifactName="${ProjName}" buildProperties="" description="" id="io.sloeber.core.toolChain.release.1448849319" name="Release" optionalBuildProperties="" parent="org.eclipse.cdt.build.core.emptycfg">
                     					
                     <folderInfo id="io.sloeber.core.toolChain.release.1448849319.28651648" name="/" resourcePath="">
                         						
@@ -37,15 +37,11 @@
                             							
                             <tool id="io.sloeber.tool.sketch.compiler.cpp.791002668" name="Arduino C++ Compiler" superClass="io.sloeber.tool.sketch.compiler.cpp">
                                 								
-                                <option id="io.sloeber.compiler.cpp.sketch.option.incpath.799446141" name="Include Paths (-I)" superClass="io.sloeber.compiler.cpp.sketch.option.incpath" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="io.sloeber.compiler.cpp.sketch.option.incpath.799446141" name="Include Paths (-I)" superClass="io.sloeber.compiler.cpp.sketch.option.incpath" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/core}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/variant}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson/src}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoOTA}&quot;"/>
                                     									
@@ -57,10 +53,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WiFi/src}&quot;"/>
                                     									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient/src}&quot;"/>
-                                    									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/WiFiManager}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer}&quot;"/>
@@ -68,6 +60,12 @@
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer/src}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266mDNS}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson_ID64/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient_ID89/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/FastLED}&quot;"/>
                                     								
                                 </option>
                                 								
@@ -77,15 +75,11 @@
                             							
                             <tool id="io.sloeber.tool.compiler.c.1815849081" name="Arduino C Compiler" superClass="io.sloeber.tool.compiler.c">
                                 								
-                                <option id="io.sloeber.compiler.c.sketch.option.incpath.2102634936" name="Include Paths (-I)" superClass="io.sloeber.compiler.c.sketch.option.incpath" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="io.sloeber.compiler.c.sketch.option.incpath.2102634936" name="Include Paths (-I)" superClass="io.sloeber.compiler.c.sketch.option.incpath" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/core}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/variant}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson/src}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoOTA}&quot;"/>
                                     									
@@ -97,10 +91,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WiFi/src}&quot;"/>
                                     									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient/src}&quot;"/>
-                                    									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/WiFiManager}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer}&quot;"/>
@@ -108,6 +98,12 @@
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer/src}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266mDNS}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson_ID64/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient_ID89/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/FastLED}&quot;"/>
                                     								
                                 </option>
                                 								
@@ -117,15 +113,11 @@
                             							
                             <tool id="io.sloeber.tool.sketch.compiler.s.1196407689" name="Arduino Assembler" superClass="io.sloeber.tool.sketch.compiler.s">
                                 								
-                                <option id="io.sloeber.compiler.asm.sketch.option.incpath.52190155" name="Include Paths (-I)" superClass="io.sloeber.compiler.asm.sketch.option.incpath" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="io.sloeber.compiler.asm.sketch.option.incpath.52190155" name="Include Paths (-I)" superClass="io.sloeber.compiler.asm.sketch.option.incpath" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/core}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/core/variant}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson/src}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoOTA}&quot;"/>
                                     									
@@ -137,10 +129,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266WiFi/src}&quot;"/>
                                     									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient/src}&quot;"/>
-                                    									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/WiFiManager}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer}&quot;"/>
@@ -148,6 +136,12 @@
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/DNSServer/src}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ESP8266mDNS}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/ArduinoJson_ID64/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/PubSubClient_ID89/src}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/2017_10_29_sonoff_mqtt_control/libraries/FastLED}&quot;"/>
                                     								
                                 </option>
                                 								
@@ -169,7 +163,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="libraries/WiFiManager/travis|libraries/ArduinoJson/scripts|libraries/ArduinoJson/fuzzing|libraries/?*/**/?xamples/**|libraries/?*/**/?xtras/**|libraries/?*/**/test*/**|libraries/?*/**/third-party/**|libraries**/._*|libraries/?*/c*/?*|libraries/?*/d*/?*|libraries/?*/D*/?*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="libraries/FastLED/platforms|libraries/FastLED/lib8tion|libraries/FastLED/docs|libraries/ArduinoJson_ID64/.github|libraries/WiFiManager/travis|libraries/ArduinoJson/scripts|libraries/ArduinoJson/fuzzing|libraries/?*/**/?xamples/**|libraries/?*/**/?xtras/**|libraries/?*/**/test*/**|libraries/?*/**/third-party/**|libraries**/._*|libraries/?*/c*/?*|libraries/?*/d*/?*|libraries/?*/D*/?*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
