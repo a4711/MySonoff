@@ -1,7 +1,5 @@
 #include <Arduino.h>
 
-FASTLED_ESP8266_RAW_PIN_ORDER
-#include <FastLED.h>
 #include "src/myiot_timer_system.h"
 #include "src/myiot_DeviceConfig.h"
 #include "src/myiot_webServer.h"
@@ -12,6 +10,7 @@ FASTLED_ESP8266_RAW_PIN_ORDER
 #include "src/led.h"
 #include "src/relay.h"
 #include "src/TestVcc.h"
+#include "src/StatusColorLED.h"
 
 MyIOT::TimerSystem tsystem;
 MyIOT::Mqtt mqtt;
@@ -22,6 +21,7 @@ MyIOT::WebServer webServer;
 DeviceButton button(0); // GPIO 0 is the button
 Led led(13);  // LED of sonoff
 Relay relay(12);
+StatusColorLED statusLED; // WS2812B on GPIO14
 
 void setup_system()
 {
@@ -40,18 +40,39 @@ CRGB leds[1];
 
 void setup_status_led()
 {
-	FastLED.addLeds<WS2812B, 14, GRB>(leds, 1); // define FASTLED_ESP8266_RAW_PIN_ORDER before "FastLED.h" include
-	leds[0] =  CRGB::Cyan;
-	FastLED.setBrightness(50);
-	FastLED.show();
+	statusLED.setup<14>();
 
 	mqtt.subscribe("rgb", [](const char*msg)
 	{
-		int val = ::atoi(msg);
-		Serial.println(val);
-		leds[0] = val;
-		FastLED.show();
+		if (0 == strcmp(msg,"rainbow"))
+		{
+			statusLED.rainbow();
+		}
+		else if (0 == strcmp(msg,"red"))
+		{
+			statusLED.setColor(CRGB::Red);
+		}
+		else if (0 == strcmp(msg,"green"))
+		{
+			statusLED.setColor(CRGB::Green);
+		}
+		else if (0 == strcmp(msg,"blue"))
+		{
+			statusLED.setColor(CRGB::Blue);
+		}
+		else if (0 == strcmp(msg, "blink"))
+		{
+			statusLED.blink();
+		}
+		else
+		{
+			int val = ::atoi(msg);
+			Serial.println(val);
+			statusLED.setColor(val);
+		}
 	});
+
+    tsystem.add(&statusLED, MyIOT::TimerSystem::TimeSpec(0,50e6));
 }
 
 
