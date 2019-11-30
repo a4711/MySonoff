@@ -9,5 +9,5 @@ When the switch is configured for your network, there is still a little web brow
 # MQTT
 The switch can be controlled by MQTT:
 
-* &lt;deviceName&gt;/control : message = [ON|OFF|<seconds>|toggle]
+* &lt;deviceName&gt;/control : message = [on|off|<seconds>|toggle]
 * &lt;deviceName&gt;/rgb : message = [red|green|blue|blink|rainbow|&lt;decimalRGB&gt;]
