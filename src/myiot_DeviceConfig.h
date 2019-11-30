@@ -30,6 +30,7 @@ class DeviceConfig
      String hostname(this->getDeviceName());
      WiFi.mode(WiFiMode::WIFI_STA);
      WiFi.hostname(hostname);
+     WiFi.begin();
      pinMode(configurePin, INPUT);
 
      unsigned long counter = 0;
@@ -117,12 +118,12 @@ class DeviceConfig
 	buffer[bufferLength-1] = 0;
     }
 
-    bool readValue(JsonObject& json, const char* valueName, char* buffer, size_t bufferLength)
+    bool readValue(DynamicJsonDocument& json, const char* valueName, char* buffer, size_t bufferLength)
     {
-      auto jsonValue = json[valueName];
-      if (!jsonValue.success()) return false;
-      secureCopy(buffer, jsonValue, bufferLength);
-      info(valueName, buffer);
+      const char* stringValue = json[valueName];
+      if (!stringValue) return false;
+      secureCopy(buffer, stringValue, bufferLength);
+      info(valueName, stringValue);
       return true;
     }
 
@@ -141,13 +142,13 @@ class DeviceConfig
             configFile.readBytes(buffer.get(), size);
             configFile.close();
             
-            DynamicJsonBuffer jsonBuffer;
-            JsonObject& json = jsonBuffer.parseObject(buffer.get());
-            if (json.success())
+            DynamicJsonDocument  doc(1024);
+            auto jerror = deserializeJson(doc, buffer.get());
+            if (!jerror)
             {
-        	readValue(json, "device_name", deviceName, sizeof(deviceName));
-        	readValue(json, "mqtt_server", mqttServer, sizeof(mqttServer));
-        	readValue(json, "state", state, sizeof(state));
+        	    readValue(doc, "device_name", deviceName, sizeof(deviceName));
+        	    readValue(doc, "mqtt_server", mqttServer, sizeof(mqttServer));
+        	    readValue(doc, "state", state, sizeof(state));
             }
             else error("failed to parse config file data");
           }
@@ -161,19 +162,18 @@ class DeviceConfig
     void fsSaveConfig()
     {
       info("fsSaveConfig()");
-      DynamicJsonBuffer jsonBuffer;
-      JsonObject& json = jsonBuffer.createObject();
+      DynamicJsonDocument doc(1024);
 
       info("device_name", deviceName);
       info("mqtt_server", mqttServer);
                       
-      json["device_name"] = deviceName;
-      json["mqtt_server"] = mqttServer;
-      json["state"] = state;
+      doc["device_name"] = deviceName;
+      doc["mqtt_server"] = mqttServer;
+      doc["state"] = state;
       File configFile = SPIFFS.open(CONFIG_FILE, "w");
       if (configFile)
       {
-        json.printTo(configFile);
+        serializeJson(doc, configFile);
         configFile.close();
       } 
       else error ("failed to save config file");
